@@ -1,4 +1,8 @@
 # Proyecto Contador de Clics
+- Creación del proyecto:
+    - `npx create-react-app nombreProyecto`
+- Inicio del server
+    - `npm start`
 
 ## Herramientas
 - Visual Studio Code
