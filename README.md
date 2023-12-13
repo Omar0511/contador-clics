@@ -14,7 +14,8 @@
 - useState
 
 ### Descripción
-- Se realiza el conteo de los Clic, cada vez que se presiona el botón, así mismo, se puede reiniciar presionando el botón de reiniciar.
+- Se realiza el conteo de los Clic cada vez que se presiona el botón (Clic).
+- También se puede reiniciar el conteo presionando el botón (Reiniciar).
 
 ###### Sitio
 - URL [Contador de Clics](https://contador-clic.netlify.app/)
