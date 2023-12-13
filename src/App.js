@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Boton from './component/Boton';
 import Contador from './component/Contador';
@@ -6,12 +7,19 @@ import Contador from './component/Contador';
 import logo from './img/logo.svg';
 
 function App() {
+  /*
+    1. Es el valor que queremos usar como el estado
+    2. Es una función que nos permite actualizarlo
+    El 0 es el valor inicial de numClics
+  */
+  const [numClics, setNumClics] = useState(0);
+
   const manejarClic = () => {
-    console.log('clic');
+    setNumClics(numClics + 1);
   };
 
   const reiniciarContador = () => {
-    console.log('Reiniciar');
+    setNumClics(0);
   };
 
   return (
@@ -27,7 +35,7 @@ function App() {
 
       <div className='contenedor-principal'>
         <Contador
-          numClics='5'
+          numClics={numClics}
         />
 
         <Boton
