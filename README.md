@@ -9,8 +9,12 @@
 
 ### Tecnologías
 - React.js
+- HTML
+- CSS
+- useState
 
 ### Descripción
+- Se realiza el conteo de los Clic, cada vez que se presiona el botón, así mismo, se puede reiniciar presionando el botón de reiniciar.
 
 ###### Sitio
 - URL [Contador de Clics](https://contador-clic.netlify.app/)
