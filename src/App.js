@@ -1,5 +1,6 @@
 import './App.css';
 import Boton from './component/Boton';
+import Contador from './component/Contador';
 
 // Definimos como queremos que se llame la IMG que vamos a IMPORTAR
 import logo from './img/logo.svg';
@@ -25,11 +26,16 @@ function App() {
       </div>
 
       <div className='contenedor-principal'>
+        <Contador
+          numClics='5'
+        />
+
         <Boton
           texto='Clic'
           btnClic={true}
           manejarClic={manejarClic}
         />
+
         <Boton
           texto='Reiniciar'
           btnClic={false}
