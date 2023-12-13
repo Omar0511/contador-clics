@@ -14,6 +14,10 @@ function App() {
           alt='Logo'
         />
       </div>
+
+      <div className='contenedor-principal'>
+
+      </div>
     </div>
   );
 }
