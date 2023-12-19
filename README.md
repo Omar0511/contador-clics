@@ -12,6 +12,8 @@
 - HTML
 - CSS
 - useState
+- Rama Clases
+    - Se creo una rama -> clases, donde se adapto el código con Clases
 
 ### Descripción
 - Se realiza el conteo de los Clic cada vez que se presiona el botón (Clic).
