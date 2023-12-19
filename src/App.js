@@ -1,57 +1,67 @@
-import { useState } from 'react';
 import './App.css';
 import Boton from './component/Boton';
 import Contador from './component/Contador';
+import React from 'react';
 
 // Definimos como queremos que se llame la IMG que vamos a IMPORTAR
 import logo from './img/logo.svg';
 
-function App() {
-  /*
-    1. Es el valor que queremos usar como el estado
-    2. Es una función que nos permite actualizarlo
-    El 0 es el valor inicial de numClics
-  */
-  const [numClics, setNumClics] = useState(0);
+class App extends React.Component
+{
+  constructor()
+  {
+    super();
 
-  const manejarClic = () => {
-    setNumClics(numClics + 1);
-  };
+    this.state = {
+      numClics: 0
+    };
 
-  const reiniciarContador = () => {
-    setNumClics(0);
-  };
+    this.manejarClic = this.manejarClic.bind(this);
+    this.reiniciarContador = this.reiniciarContador.bind(this);
+  }
 
-  return (
-    <div className='App'>
-      <div className='logo-contenedor'>
-        <img 
-          className='logo'
-          // Utilizamos el import de LOGO
-          src={logo}
-          alt='Logo'
-        />
+    manejarClic() 
+    {
+      this.setState( ( { numClics } ) => ( { numClics: numClics + 1 } ) );
+    };
+
+    reiniciarContador()
+    {
+      this.setState( { numClics: 0 } );
+    };
+
+  render() {
+    return (
+      <div className='App'>
+        <div className='logo-contenedor'>
+          <img 
+            className='logo'
+            // Utilizamos el import de LOGO
+            src={logo}
+            alt='Logo'
+          />
+        </div>
+
+        <div className='contenedor-principal'>
+          <Contador
+            numClics={this.state.numClics}
+          />
+
+          <Boton
+            texto='Clic'
+            btnClic={true}
+            manejarClic={this.manejarClic}
+          />
+
+          <Boton
+            texto='Reiniciar'
+            btnClic={false}
+            manejarClic={this.reiniciarContador}
+          />
+        </div>
       </div>
-
-      <div className='contenedor-principal'>
-        <Contador
-          numClics={numClics}
-        />
-
-        <Boton
-          texto='Clic'
-          btnClic={true}
-          manejarClic={manejarClic}
-        />
-
-        <Boton
-          texto='Reiniciar'
-          btnClic={false}
-          manejarClic={reiniciarContador}
-        />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

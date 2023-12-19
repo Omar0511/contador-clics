@@ -1,16 +1,18 @@
 import React from 'react';
 import '../css/styles.css'
 
-function Boton( { texto, btnClic, manejarClic } )
+class Boton extends React.Component
 {
-    return (
-        <button 
-            className={ btnClic ? 'boton-clic' : 'boton-reiniciar' }
-            onClick={manejarClic}
-        >
-            {texto}
-        </button>
-    );
+    render() {
+        return (
+            <button 
+                className={ this.props.btnClic ? 'boton-clic' : 'boton-reiniciar' }
+                onClick={this.props.manejarClic}
+            >
+                {this.props.texto}
+            </button>
+        );
+    }
 }
 
 export default Boton;
